@@ -84,7 +84,7 @@
                 Sí 🖤
             </button>
 
-            <button class="no" id="noBtn" onmouseover="moverBoton()">
+            <button class="no" id="noBtn" onclick="moverBoton()">
                 No 😔
             </button>
         </div>
@@ -97,12 +97,14 @@
             const btn = document.getElementById("noBtn");
             const texto = document.querySelector(".card p");
 
+            // Primer intento: solo cambia el texto
             if (primerIntentoNo) {
                 texto.innerText = "uuuy no puede 😏";
                 primerIntentoNo = false;
                 return;
             }
 
+            // A partir del segundo clic: el botón huye
             const x = Math.random() * (window.innerWidth - btn.offsetWidth);
             const y = Math.random() * (window.innerHeight - btn.offsetHeight);
 
